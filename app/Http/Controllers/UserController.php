@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Validator;
 
-class UsersController extends Controller
+class UserController extends Controller
 {
 
 
     public function register(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $validator = Validator()::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required'

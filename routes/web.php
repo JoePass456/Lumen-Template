@@ -1,7 +1,7 @@
 <?php
+use App\Http\Controllers\BookController;
 
 /** @var \Laravel\Lumen\Routing\Router $router */
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -13,8 +13,12 @@
 |
 */
 
+$router->get('/book/create/' , 'BookController@new_book');
+
+$router->get('/book/delete/' , 'BookController@delete_book');
+
 $router->get('/', function () use ($router) {
     return $router->app->version();    
 });
 
-$router->post('/register','UsersController@register');
+$router->post('/register','UserController@register');
